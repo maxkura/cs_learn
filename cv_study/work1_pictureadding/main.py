@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 
-picture_path= '/home/maxkura/exercise/cv_study/picture.png'
-cat_path='/home/maxkura/exercise/cv_study/maodie.jpg'
+picture_path= '/home/maxkura/cs_learn/cv_study/work1_pictureadding/picture.png'
+cat_path='/home/maxkura/cs_learn/cv_study/work1_pictureadding/maodie.jpg'
 
 pict= cv2.imread(picture_path)
 cat= cv2.imread(cat_path)
@@ -42,6 +42,7 @@ print(xl,xr,yl,yr)
 
 mask[yl:yr,xl:xr]=cat
 print(mask.dtype,pict.dtype)
+cv2.imshow('mask',pict)
 cv2.imwrite('/home/maxkura/exercise/cv_study/mask.png',mask)
 #图片融合
 result=cv2.addWeighted(pict, 0.5, mask, 1.2,-5)
